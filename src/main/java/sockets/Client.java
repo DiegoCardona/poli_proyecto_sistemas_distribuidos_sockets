@@ -6,11 +6,11 @@ import java.net.Socket;
 import java.util.Scanner;
 
 public class Client {
-    private static final String HOST="localhost";
+    private String HOST;
     private static final int PORT=9001;
 
-    public Client () {
-
+    public Client (final String hostAddress) {
+        HOST = hostAddress;
     }
 
     public void sending() {

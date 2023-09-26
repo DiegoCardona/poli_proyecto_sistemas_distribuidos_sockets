@@ -1141,5 +1141,72 @@ cuentas|schema||poliroot|localhost|UPDATE|G</Grants>
     <user id="330" parent="1" name="root">
       <Host>localhost</Host>
     </user>
+    <table id="331" parent="324" name="Ciudades">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="332" parent="324" name="Personas">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <column id="333" parent="331" name="ciud_id">
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="334" parent="331" name="ciud_nombre">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <index id="335" parent="331" name="PRIMARY">
+      <ColNames>ciud_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="336" parent="331" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="337" parent="332" name="dir_ciud_id">
+      <DasType>int(11)|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="338" parent="332" name="dir_tel">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="339" parent="332" name="dir_tipo_tel">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="340" parent="332" name="dir_nombre">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="341" parent="332" name="dir_direccion">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <foreign-key id="342" parent="332" name="Personas_ibfk_1">
+      <ColNames>dir_ciud_id</ColNames>
+      <RefColNames>ciud_id</RefColNames>
+      <RefTableName>Ciudades</RefTableName>
+    </foreign-key>
+    <index id="343" parent="332" name="PRIMARY">
+      <ColNames>dir_tel</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="344" parent="332" name="dir_ciud_id">
+      <ColNames>dir_ciud_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="345" parent="332" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
   </database-model>
 </dataSource>
